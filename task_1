@@ -1,0 +1,56 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+# Load the data
+df = pd.read_csv('population_data.csv')
+
+# Ensure the target variable is numeric
+if df['target_variable'].dtype == 'object':
+    df['target_variable'] = pd.to_numeric(df['target_variable'], errors='coerce')
+# Create a bar chart
+plt.figure(figsize=(10, 6))
+sns.countplot(data=df, x='target_variable')
+plt.title('Distribution of Target Variable')
+plt.xlabel('Value')
+plt.ylabel('Count')
+plt.show()
+
+# Save the figure
+plt.savefig('distribution_bar_chart.png', dpi=300, bbox_inches='tight')
+# Create a histogram
+plt.figure(figsize=(10, 6))
+sns.histplot(data=df, x='target_variable', kde=False)
+plt.title('Distribution of Target Variable')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+# Save the figure
+plt.savefig('distribution_histogram.png', dpi=300, bbox_inches='tight')
+df = pd.read_csv('population_data.csv')
+
+# Ensure the target variable is numeric
+if df['target_variable'].dtype == 'object':
+    df['target_variable'] = pd.to_numeric(df['target_variable'], errors='coerce')
+
+# Create a bar chart
+plt.figure(figsize=(10, 6))
+sns.countplot(data=df, x='target_variable')
+plt.title('Distribution of Target Variable')
+plt.xlabel('Value')
+plt.ylabel('Count')
+plt.show()
+
+# Save the figure
+plt.savefig('distribution_bar_chart.png', dpi=300, bbox_inches='tight')
+
+# Create a histogram
+plt.figure(figsize=(10, 6))
+sns.histplot(data=df, x='target_variable', kde=False)
+plt.title('Distribution of Target Variable')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+# Save the figure
+plt.savefig('distribution_histogram.png', dpi=300, bbox_inches='tight')
